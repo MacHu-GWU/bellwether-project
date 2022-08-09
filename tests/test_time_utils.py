@@ -147,4 +147,4 @@ if __name__ == "__main__":
         "--cov-report", f"html:{dir_htmlcov}",
         abspath,
     ]
-    subprocess.run(args, check=True)
+    subprocess.run(args)
