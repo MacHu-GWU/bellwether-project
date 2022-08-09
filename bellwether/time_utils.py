@@ -1,8 +1,6 @@
 # -*- coding: utf-8 -*-
 
-import typing as T
 from datetime import date, datetime, timedelta, timezone
-from dateutil.tz import UTC
 
 # ------------------------------------------------------------------------------
 # Time integer constants in microseconds
@@ -50,10 +48,7 @@ def ensure_utc_timezone(dt: datetime):
     """
     Ensure the datetime object is timezone aware and in UTC timezone
     """
-    if not (
-        (dt.tzinfo == timezone.utc)
-        or (dt.tzinfo == UTC)
-    ):
+    if not dt.tzinfo == timezone.utc:
         raise ValueError(f"{dt} is not a timezone aware UTC time")
 
 
